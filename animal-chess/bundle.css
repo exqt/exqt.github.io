@@ -226,12 +226,26 @@ hr {
   line-height: 42px;
   margin-left: 9px;
 }
-.game-container .game-message.game-won {
+.game-setting {
+  color: #f9f6f2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(238, 228, 218, 0.5);
+  z-index: 100;
+  text-align: center;
+  animation: fade-in 800ms ease;
+  animation-fill-mode: both;
+  font-size: 48px;
+  font-weight: 600;
+  padding-top: 180px;
+}
+
+.game-message {
   background: rgba(237, 194, 46, 0.5);
   color: #f9f6f2;
-}
-.game-container .game-message.game-won, .game-container .game-message.game-over {
-  display: block;
 }
 
 .grid-container {
@@ -632,6 +646,7 @@ hr {
   color: #f9f6f2;
   background: #da5f40;
   font-size: 45px;
+  transform: scale(-1);
 }
 
 .tile-dot-container {

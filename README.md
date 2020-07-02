@@ -1,3 +1,3 @@
 # Stuff
 
-- Animal Chess
+- [Animal Chess](https://exqt.github.io/animal-chess)
