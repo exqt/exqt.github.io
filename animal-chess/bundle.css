@@ -1,7 +1,7 @@
 :root {
   --board-row: 4;
   --board-col: 3;
-  --tile-size: 128px;
+  --tile-size: 112px;
 }
 
 #app-wrapper {
@@ -129,7 +129,7 @@ body {
 
 @media screen and (max-width: 600px) {
   :root {
-    --tile-size: 25vw;
+    --tile-size: 20vw;
   }
 
   body {
