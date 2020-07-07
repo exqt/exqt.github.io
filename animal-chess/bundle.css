@@ -2,6 +2,8 @@
   --board-row: 4;
   --board-col: 3;
   --tile-size: 112px;
+  --dot-size: 9px;
+  --dot-margin: 8px;
 }
 
 #app-wrapper {
@@ -42,7 +44,7 @@ body {
 }
 
 .game-message {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -59,6 +61,9 @@ body {
   animation: fade-in 800ms ease;
   animation-fill-mode: both;
 }
+.game-message[data-on="true"] {
+  display: flex;
+}
 .game-message p {
   font-size: 60px;
   font-weight: bold;
@@ -68,7 +73,7 @@ body {
   font-weight: bold;
 }
 .game-setting {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -85,6 +90,9 @@ body {
   animation-fill-mode: both;
   font-size: 48px;
   font-weight: 600;
+}
+.game-setting[data-on="true"] {
+  display: flex;
 }
 
 .grid {
@@ -140,7 +148,6 @@ body {
 }
 
 /* mobile */
-
 @media screen and (max-width: 600px) {
   :root {
     --tile-size: 20vw;
@@ -188,11 +195,6 @@ body {
   }
 }
 
-:root {
-  --dot-size: 9px;
-  --dot-margin: 8px;
-}
-
 .tile {
   position: relative;
   width: var(--tile-size);
@@ -208,17 +210,15 @@ body {
   touch-action: none;
 }
 
-.tile.tile-ally {
+.tile[data-team="ally"] {
   color: #f9f6f2;
   background: #40b6da;
 }
-.tile.tile-enemy {
+.tile[data-team="enemy"] {
   color: #f9f6f2;
   background: #da5f40;
   transform: scale(-1);
 }
-
-/* dot */
 
 .tile-dot-container {
   position: absolute;
@@ -243,7 +243,6 @@ body {
   visibility: hidden;
 }
 
-/* small */
 
 #ally-hand > .tile, #enemy-hand > .tile {
   width: calc(var(--tile-size) / 2);
